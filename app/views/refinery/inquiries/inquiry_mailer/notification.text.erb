@@ -6,9 +6,12 @@
 
 <%=raw t('.from') %>: <%= @inquiry.name %>
 <%=raw t('.email') %>: <%= @inquiry.email %>
-<%=raw t('.phone') %>: <%= @inquiry.phone %>
 <%=raw t('.message') %>:
 <%=strip_tags(@inquiry.message) %>
+
+Newsletter signup? <%= strip_tags(@inquiry.newsletter_signup.to_s) %>
+Schedule a demo? <%= strip_tags(@inquiry.demo.to_s) %>
+Schedule a call? <%= strip_tags(@inquiry.chat.to_s) %>
 
 <%=raw t('.inquiry_ends') %>
 

@@ -66,11 +66,11 @@ zh-CN:
           message: 信息
           closing_line: 谨致问候
           ps: 附言 您所有的咨询被保存在“咨询”区域以便于你在日后查看.
-    activerecord:
+  activerecord:
     models:
-      refinery/inquiry: inquiry
+      refinery/inquiries/inquiry: inquiry
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: 姓名
         email: email
         phone: 联系电话

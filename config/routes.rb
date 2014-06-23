@@ -1,8 +1,8 @@
 Refinery::Core::Engine.routes.draw do
   namespace :inquiries, :path => '' do
-    get '/contact', :to => 'inquiries#new', :as => 'new_inquiry'
+    get '/get-started', :to => 'inquiries#new', :as => 'new_inquiry'
 
-    resources :contact,
+    resources :contact, :path => 'get-started',
                 :only => :create,
                 :as => :inquiries,
                 :controller => 'inquiries' do

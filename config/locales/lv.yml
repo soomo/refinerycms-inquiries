@@ -57,8 +57,8 @@ lv:
             note: "Piezīme: ievieto šo tektstu %name% tur, kur tu epastā vēlies norādīt klienta vārdu"
       inquiry_mailer:
         notification:
-          greeting: Sveicināts(-a)
-          you_recieved_new_inquiry: Jūs nupat saņēmāt jaunu piperasījumu Jūsu saitā.
+          greeting: Sveiki
+          you_recieved_new_inquiry: Jūs nupat saņēmāt jaunu pieprasījumu savā mājaslapā.
           inquiry_starts: --- pieprasījuma sākums ---
           inquiry_ends: --- pieprasījuma beigas ---
           from: 'No'
@@ -69,9 +69,9 @@ lv:
           ps: P.S. Ja vēlaties skatīt šo un citus pieprasījumus vēlāk, tad tos var atrast zem sadaļas "Pieprasījumi".
   activerecord:
     models:
-      refinery/inquiry: pieprasījums
+      refinery/inquiries/inquiry: pieprasījums
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: Vārds
         email: Epasts
         phone: Tālrunis

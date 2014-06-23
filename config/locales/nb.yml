@@ -66,11 +66,11 @@ nb:
           message: Melding
           closing_line: Vennlig hilsen
           ps: P.S. Alle dine forespørsler blir lagret i seksjonen "Forespørsel" i Refinery om du vil finne de igjen senere
-    activerecord:
+  activerecord:
     models:
-      refinery/inquiry: Forespørsel
+      refinery/inquiries/inquiry: Forespørsel
     attributes:
-      refinery/inquiry:
+      refinery/inquiries/inquiry:
         name: Navn
         email: Epost
         phone: Telefon
