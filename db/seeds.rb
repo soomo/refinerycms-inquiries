@@ -5,13 +5,11 @@
 end if defined?(::Refinery::User)
 
 if defined?(::Refinery::Page)
-  contact_us_page = Refinery::Page.where(:link_url => '/contact').first
-
-  unless contact_us_page
+  unless Refinery::Page.where(:link_url => '/get-started').any?
     contact_us_page = ::Refinery::Page.create({
-      :title => "Contact",
-      :link_url => "/contact",
-      :menu_match => "^/(inquiries|contact).*$",
+      :title => "Get Started",
+      :link_url => "",
+      :menu_match => "^/(inquiries|get-started).*$",
       :deletable => false
     })
     contact_us_page.parts.create({
@@ -26,11 +24,11 @@ if defined?(::Refinery::Page)
     })
   end
 
-  unless Refinery::Page.where(:link_url => '/contact/thank_you').any?
+  unless Refinery::Page.where(:link_url => '/get-started/thank-tyou').any?
     thank_you_page = contact_us_page.children.create({
       :title => "Thank You",
-      :link_url => "/contact/thank_you",
-      :menu_match => "^/(inquiries|contact)/thank_you$",
+      :link_url => "",
+      :menu_match => "^/(inquiries|get-started)/thank-you$",
       :show_in_menu => false,
       :deletable => false
     })

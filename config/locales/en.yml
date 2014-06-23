@@ -10,7 +10,7 @@ en:
       inquiries:
         new:
           send: Send message
-          privacy_policy: We value your privacy
+          privacy_policy: We value your privacy.
       admin:
         inquiries:
           delete: Remove this inquiry forever
