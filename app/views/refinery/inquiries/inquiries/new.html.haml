@@ -2,33 +2,37 @@
 
 #interior
   .content-container
-    = raw(@page.content_for(:body))
-  .content-container
-    .inquiries
-      = form_for [refinery, :inquiries, @inquiry] do |f|
-        = render :partial => "/refinery/admin/error_messages", |
-          :locals => {                                         |
-            :object => @inquiry,                               |
-            :include_object_name => true                       |
-          }                                                    |
-        .field
-          = f.required_label :name, :class => 'placeholder-fallback'
-          = f.text_field :name, :class => 'text', :required => 'required', :placeholder => t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry')
-        .field
-          = f.required_label :email, :class => 'placeholder-fallback'
-          = f.email_field :email, :class => 'text email', :required => 'required', :placeholder => t('email', :scope => 'activerecord.attributes.refinery/inquiries/inquiry')
-        .field.message_field
-          = f.required_label :message, :class => 'placeholder-fallback'
-          = f.text_area :message, :rows => 8, :required => 'required', :placeholder => t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry')
-        .field.checkboxes
-          = f.label :newsletter_signup, "Sign me up for your e-mail newsletter."
-          = f.check_box :newsletter_signup
-        .field.checkboxes
-          = f.label :demo, "I'd like to see a demo."
-          = f.check_box :demo
-        .field.checkboxes
-          = f.label :chat, "I'd like to schedule a call."
-          = f.check_box :chat
-        .actions
-          = f.submit t('.send')
-          = link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link
+    %section#body
+      = raw(@page.content_for(:body))
+
+      .inquiries
+        = form_for [refinery, :inquiries, @inquiry] do |f|
+          = render :partial => "/refinery/admin/error_messages", |
+            :locals => {                                         |
+              :object => @inquiry,                               |
+              :include_object_name => true                       |
+            }                                                    |
+          .field
+            = f.required_label :name, :class => 'placeholder-fallback'
+            = f.text_field :name, :class => 'text', :required => 'required', :placeholder => t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry')
+          .field
+            = f.required_label :email, :class => 'placeholder-fallback'
+            = f.email_field :email, :class => 'text email', :required => 'required', :placeholder => t('email', :scope => 'activerecord.attributes.refinery/inquiries/inquiry')
+          .field.message_field
+            = f.required_label :message, :class => 'placeholder-fallback'
+            = f.text_area :message, :rows => 8, :required => 'required', :placeholder => t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry')
+          .field.checkboxes
+            = f.label :newsletter_signup, "Sign me up for your e-mail newsletter."
+            = f.check_box :newsletter_signup
+          .field.checkboxes
+            = f.label :demo, "I'd like to see a demo."
+            = f.check_box :demo
+          .field.checkboxes
+            = f.label :chat, "I'd like to schedule a call."
+            = f.check_box :chat
+          .actions
+            = f.submit t('.send')
+            = link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link
+
+    %section#sidebar.right.get-started-sidebar
+      = raw(@page.content_for(:sidebar))
